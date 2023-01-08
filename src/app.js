@@ -4,9 +4,9 @@ import cors from "cors"
 const app = express()
 const PORT = 5000
 
-const usuarios = []
-
-const tweet = []
+let usuarios = []
+let tweet = []
+let avatarLogado = [{avatar:""}]
 
 app.use(express.json())
 app.use(cors())
@@ -28,10 +28,10 @@ app.post("/tweets", (req, res) =>{
   const id = tweet.length + 1;
 
   dados.id = id;
-  if(!usuarios.find(dados.username)) {
-    return `UNAUTHORIZED`
+  if(!usuarios.find((item) => item.username === dados.username)) {
+    res.send("UNAUTHORIZED")
   }
-  tweet.push(dados)
+  tweet.push({...avatarLogado, ...dados})
 
   res.send("ok")
 })
