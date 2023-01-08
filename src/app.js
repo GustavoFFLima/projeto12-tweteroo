@@ -37,10 +37,13 @@ app.post("/tweets", (req, res) =>{
 })
 
 
-// app.get("/tweets", (req, res) =>{
-//     //salvar os dados do usuario
-//     res,send('ok')
-// })
+app.get("/tweets", (req, res) =>{
+    if(tweet.length > 10) {
+      const ultimosTweets = tweet.slice(-10, tweet.length)
+      return res.send(ultimosTweets)
+    }
+    res.send(tweet)
+})
 
 
 
