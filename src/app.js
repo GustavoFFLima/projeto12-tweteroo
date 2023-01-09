@@ -107,13 +107,13 @@ app.post("/tweets", (req, res) =>{
   }
   tweet.push({...avatarLogado, ...dados})
 
-  res.send(tweet)
+  res.send("ok")
 })
 
 
 app.get("/tweets", (req, res) =>{
     if(tweet.length > 10) {
-      const ultimosTweets = tweet.slice(-10, tweet.length)
+      const ultimosTweets = tweet.slice(tweet.length -10, tweet.length)
       console.log(ultimosTweets)
       return res.send(ultimosTweets)
     }
