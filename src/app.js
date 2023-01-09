@@ -5,80 +5,7 @@ const app = express()
 const PORT = 5000
 
 let usuarios = []
-let tweet = [
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 1
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 2
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 3
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 4
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 5
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 6
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 7
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 8
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 9
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 10
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 11
-    },
-    {
-      "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-      "username": "bobesponja",
-      "tweet": "eu amo o hub",
-      "id": 12
-    }
-  ]
+let tweet = []
 let avatarLogado = {avatar:""}
 
 app.use(express.json())
@@ -107,7 +34,7 @@ app.post("/tweets", (req, res) =>{
   }
   tweet.push({...avatarLogado, ...dados})
 
-  res.send("ok")
+  res.send(tweet)
 })
 
 
